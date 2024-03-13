@@ -1,13 +1,15 @@
 :root {
-  --dark: #222831;
-  -text: #FFFFFF;
+  --bg: #F3F3F3;
+  --grey: #B7B7B7;
+  --text: #222831;
+  --blue: #043157;
   --red: #e63130;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  height: calc(100% - 30px);
+  height: 100%;
   font-family: "Inter", sans-serif;
 }
 
