@@ -1,6 +1,6 @@
 import {useMapEvents} from "react-leaflet";
 
-const MapHandler = ({ setMarkerPosition }) => {
+const MapClickHandler = ({ setMarkerPosition }) => {
     const map = useMapEvents({
         click(e) {
             const clickedPosition = [e.latlng.lat, e.latlng.lng];
@@ -11,4 +11,4 @@ const MapHandler = ({ setMarkerPosition }) => {
     return null;
 };
 
-export default MapHandler;
+export default MapClickHandler;
