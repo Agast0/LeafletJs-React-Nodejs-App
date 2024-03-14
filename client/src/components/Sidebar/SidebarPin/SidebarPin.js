@@ -26,7 +26,7 @@ function SidebarPin({ pin, setPinLocation, setIsSidebarOpen}) {
     };
 
     const handlePinClicked = () => {
-        setPinLocation(pin.lat, pin.lng);
+        setPinLocation(parseFloat(pin.lat), parseFloat(pin.lng));
         setIsSidebarOpen(false);
     }
 
