@@ -1,6 +1,7 @@
 import './index.css';
 import { IoIosClose } from "react-icons/io";
-import { useState } from "react";
+import {useContext, useState} from "react";
+import {PinApiContext} from "../../Providers/PinApiProvider";
 
 function SidebarPin({ pin, setPinLocation, setIsSidebarOpen}) {
     const [isPinHovered, setIsPinHovered] = useState(false);
@@ -8,6 +9,8 @@ function SidebarPin({ pin, setPinLocation, setIsSidebarOpen}) {
 
     const dateTime = new Date(pin.datetime);
     const formattedDateTime = `${dateTime.toLocaleDateString()}`;
+
+    const {removePin} = useContext(PinApiContext);
 
     const handlePinMouseEnter = () => {
         setIsPinHovered(true);
@@ -30,8 +33,9 @@ function SidebarPin({ pin, setPinLocation, setIsSidebarOpen}) {
         setIsSidebarOpen(false);
     }
 
-    const handleDeletePinClicked = () => {
-        // to do
+    const handleDeletePinClicked = (e) => {
+        e.stopPropagation()
+        removePin(pin.id);
     }
 
     return (

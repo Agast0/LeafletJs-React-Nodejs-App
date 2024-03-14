@@ -1,6 +1,7 @@
 .side-bar-content-container {
     width: 100%;
     height: 100%;
+    overflow: auto; /* Change 'hidden' to 'auto' or 'scroll' */
 }
 
 .side-bar-inner-container {
@@ -20,7 +21,29 @@
 .side-bar-line {
     width: 95%;
     border-top: 1px solid var(--grey);
-    margin-block: 5px; /* Adjust as needed */
+    margin-block: 5px;
     margin-bottom: 8px;
     border-radius: 4px;
+}
+
+.side-bar-pins-container {
+    padding-left: 10px;
+    width: 103%;
+    max-height: calc(100vh - 169px);
+    overflow-y: auto;
+    transform: translateX(13px);
+}
+
+.side-bar-skeleton-container {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.side-bar-skeleton-container.second {
+    margin-top: 32px;
 }

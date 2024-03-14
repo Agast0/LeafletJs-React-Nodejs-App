@@ -1,0 +1,18 @@
+.side-bar-download-button {
+    margin-top: 20px;
+    background-color: #267FCA;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 28px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+}
+
+.side-bar-download-text {
+    margin-right: 10px;
+}

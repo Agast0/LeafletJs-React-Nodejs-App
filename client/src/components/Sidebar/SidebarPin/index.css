@@ -24,6 +24,10 @@
     font-weight: 600;
 }
 
+.pin-icon-container {
+    transform: translateX(20px);
+}
+
 .pin-text-date {
     font-size: 13px;
     font-weight: 400;
