@@ -7,8 +7,10 @@ const PopupDisplay = ({ markerPosition }) => {
 
     return (
         <div className={'popup-display-container'}>
-            {roundedLatitude}, {roundedLongitude}
-            <div className="line"></div>
+            <div className={'popup-display-text'}>
+                {roundedLatitude}, {roundedLongitude}
+            </div>
+            <div className="line" />
             <div className={'popup-display-save-text-container'}><IoIosSave className={"popup-display-save-icon"}/> save</div>
         </div>
     );

@@ -24,3 +24,12 @@
     margin-right: 5px;
     color: var(--blue);
 }
+
+.popup-display-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 109%;
+    font-size: 12px;
+    font-weight: 800;
+}

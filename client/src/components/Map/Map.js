@@ -3,9 +3,10 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { useState, useRef } from "react";
-import MapClickHandler from "../MapClickHandler/MapClickHandler"; // Correct import
+import MapClickHandler from "../MapClickHandler/MapClickHandler";
 import PopupDisplay from "../PopupDisplay/PopupDisplay";
-import RecenterButton from "../RecenterButton/RecenterButton"; // Correct import
+import RecenterButton from "../RecenterButton/RecenterButton";
+import Sidebar from "../Sidebar/Sidebar";
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -42,6 +43,11 @@ function Map() {
         handleRecenter()
     }
 
+    const setPinLocation = (lat, lng) => {
+        setMarkerPosition([lat, lng]);
+        mapRef.current.flyTo([lat, lng], mapRef.current.getZoom());
+    }
+
     return (
         <>
             <RecenterButton handleRecenter={handleRecenter} />
@@ -57,6 +63,7 @@ function Map() {
                     </Popup>
                 </Marker>
             </MapContainer>
+            <Sidebar setPinLocation={setPinLocation}/>
         </>
     );
 }
