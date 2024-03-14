@@ -44,9 +44,15 @@ function Map() {
     }
 
     const setPinLocation = (lat, lng) => {
-        setMarkerPosition([lat, lng]);
-        mapRef.current.flyTo([lat, lng], mapRef.current.getZoom());
+        const latitude = parseFloat(lat);
+        const longitude = parseFloat(lng);
+
+        if (!isNaN(latitude) && !isNaN(longitude)) {
+            setMarkerPosition([latitude, longitude]);
+            mapRef.current.flyTo([latitude, longitude], mapRef.current.getZoom());
+        }
     }
+
 
     return (
         <>
